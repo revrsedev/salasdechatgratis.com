@@ -1,0 +1,142 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid wpchat-frontpage-hero">
+    <div class="container">
+        <h1 class="text-center mb-4"><i class="fab fa-slack-hash"></i> Conéctate a VicioChat</h1>
+        <div class="mb-4 text-center">
+            <!-- Opciones -->
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2676858001618396" data-ad-slot="3851206402" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script> document.addEventListener('DOMContentLoaded', function() { (adsbygoogle = window.adsbygoogle || []).push({}); });</script>
+        </div>
+        <form action="https://www.viciochat.org/opcion/" method="POST" style="text-align: center;">
+            <div class="col-lg-12 d-lg-block">
+                <input class="form-input front-input" type="text" value="" name="nick" id="nick" placeholder="Escribe tu nick" autocomplete="off" autofocus="">
+                <input type="hidden" name="join" value="#chat,#amistad">
+                <button class="btn front-btn"><i class="far fa-comments"></i> Chatea Ya!</button>
+            </div>
+        </form>
+        <div class="row">
+            <div class="col text-center">
+                <p>¡Ingresa tu nombre y comienza a chatear en VicioChat al instante! Fácil ¿verdad?</p>
+            </div>
+        </div>
+    </div>
+</div>
+<main class="container">
+    <div class="row mt-4">
+        <div class="col-12">
+            <h2 class="text-center">Salas de chat sugeridas</h2>
+        </div>
+        <div class="col-6 col-sm-3">
+            <div class="card">
+                <a href="chat/amistad/index.html"><img width="320" height="213" class="card-img-top" src="{% static 'images/2022/03/amigos.webp' %}" alt="Amistad"></a>
+                <div class="card-body">
+                    <h3 class="card-title"><a href="chat/amistad/index.html"><i class="fab fa-slack-hash"></i> Amistad</a></h3>
+                    <p class="card-text">Chat para amigos gratuito, chat en español de amistad, conoce gente nueva y haz amigos en nuestra maravillosa red de chat completamente gratis.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-sm-3">
+            <div class="card">
+                <a href="chat/ligar/index.html"><img width="320" height="213" class="card-img-top" src="{% static 'images/2022/03/ligar.webp' %}" alt="Ligar"></a>
+                <div class="card-body">
+                    <h3 class="card-title"><a href="chat/ligar/index.html"><i class="fab fa-slack-hash"></i> Ligar</a></h3>
+                    <p class="card-text">Chat para ligar completamente gratis, comienza a chatear y encuentra tu pareja entre hombres y mujeres, hoy es el día para tener una cita exitosa y triunfar en chat ligar.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-sm-3">
+            <div class="card">
+                <a href="chat/mas-de-40/index.html"><img width="320" height="213" class="card-img-top" src="{% static 'images/2022/03/masde40.webp' %}" alt="Más de 40"></a>
+                <div class="card-body">
+                    <h3 class="card-title"><a href="chat/mas-de-40/index.html"><i class="fab fa-slack-hash"></i> Más de 40</a></h3>
+                    <p class="card-text">Chat con mayores de 40 años, chatea con personas mayores de 40 años, haz amigos o encuentra a tu pareja, el chat es gratis.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-sm-3">
+            <div class="card">
+                <a href="chat/amor/index.html"><img width="320" height="213" class="card-img-top" src="{% static 'images/2022/03/amor.webp' %}" alt="Amor"></a>
+                <div class="card-body">
+                    <h3 class="card-title"><a href="chat/amor/index.html"><i class="fab fa-slack-hash"></i> Amor</a></h3>
+                    <p class="card-text">Ven a la sala de Chat de Amor para conocer gente, puedes compartir amor y felicidad con personas en el Chat gratis</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <h3 class="text-center">Categorías importantes</h3>
+        </div>
+        <div class="col-6 col-sm-3">
+            <div class="card">
+                <a href="chats/espana/index.html"><img width="320" height="213" class="card-img-top" src="{% static 'images/2022/01/espana.webp' %}" alt="España"></a>
+                <div class="card-body">
+                    <h3 class="card-title"><a href="chats/espana/index.html"><i class="fas fa-folder-open"></i> España</a></h3>
+                    <p class="card-text">Chat de las ciudades y municipios más importantes de España por categoría. Encuentra las ciudades de Madrid, Valencia, Barcelona, ​​Bilbao y Vigo en nuestro chat.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-sm-3">
+            <div class="card">
+                <a href="chats/latinoamerica/index.html"><img width="320" height="213" class="card-img-top" src="{% static 'images/2022/02/latinoamerica.webp' %}" alt="Latinoamerica"></a>
+                <div class="card-body">
+                    <h3 class="card-title"><a href="chats/latinoamerica/index.html"><i class="fas fa-folder-open"></i> Latinoamérica</a></h3>
+                    <p class="card-text">Latinoamérica es el término utilizado para describir a los habitantes de América Latina en las Américas.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-sm-3">
+            <div class="card">
+                <a href="chats/ocio/index.html"><img width="320" height="213" class="card-img-top" src="{% static 'images/2022/03/ocio.webp' %}" alt="Ocio"></a>
+                <div class="card-body">
+                    <h3 class="card-title"><a href="chats/ocio/index.html"><i class="fas fa-folder-open"></i> Ocio</a></h3>
+                    <p class="card-text">Ocio y diversión es una de las categorías del chat de VicioChat, donde hablamos de TV, películas, juegos, noticias del mundo esotérico y más.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <h3 class="text-center mb-2">Noticias de la web</h3>
+        </div>
+        <div class="col-6 col-sm-3">
+            <div class="card">
+                <a href="convocatoria-opers-de-viciochat-marzo-2022/index.html"><img width="300" height="200" src="{% static 'images/2022/06/convocatoria-opers.webp' %}" class="card-img-top wp-post-image" alt="convocatoria opers" decoding="async" loading="lazy"></a>
+                <div class="card-body">
+                    <p style="margin-bottom:0.5rem;">14/03/2023</p>
+                    <h4 class="card-title"><a href="convocatoria-opers-de-viciochat-marzo-2022/index.html">CONVOCATORIA OPERS DE VICIOCHAT MARZO 2023</a></h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-sm-3">
+            <div class="card">
+                <a href="viciochat-consola-de-ircap-8-72/index.html"><img width="300" height="200" src="{% static 'images/2022/06/consola-ircap.webp' %}" class="card-img-top wp-post-image" alt="consola ircap" decoding="async" loading="lazy"></a>
+                <div class="card-body">
+                    <p style="margin-bottom:0.5rem;">27/02/2021</p>
+                    <h4 class="card-title"><a href="viciochat-consola-de-ircap-8-72/index.html">VicioChat consola de IRcap 8.72</a></h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-sm-3">
+            <div class="card">
+                <a href="ligar-en-fin-de-semana-buscas-a-tu-pareja-definitiva-online/index.html"><img width="300" height="200" src="{% static 'images/2022/06/nos-renovamos-para-ti.webp' %}" class="card-img-top wp-post-image" alt="ligar en fin de semana" decoding="async" loading="lazy"></a>
+                <div class="card-body">
+                    <p style="margin-bottom:0.5rem;">11/02/2021</p>
+                    <h4 class="card-title"><a href="ligar-en-fin-de-semana-buscas-a-tu-pareja-definitiva-online/index.html">Renovamos nuestra web para dispositivos móviles, tablets y computadora</a></h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-sm-3">
+            <div class="card">
+                <a href="llega-la-tercera-ola-de-covid19-a-espana-consejos-para-combatir-el-confinamiento/index.html"><img width="300" height="200" src="{% static 'images/2022/06/videoconferencia.webp' %}" class="card-img-top wp-post-image" alt="Coronavirus chat" decoding="async" loading="lazy"></a>
+                <div class="card-body">
+                    <p style="margin-bottom:0.5rem;">26/01/2021</p>
+                    <h4 class="card-title"><a href="llega-la-tercera-ola-de-covid19-a-espana-consejos-para-combatir-el-confinamiento/index.html">¿Aburrido? Ingresa a nuestro Videochat online gratuito para conocer a desconocidos.</a></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

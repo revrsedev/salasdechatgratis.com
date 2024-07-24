@@ -1,0 +1,27 @@
+{% load static %}
+{% block navbar %}
+<div id="wrapper-navbar">
+    <a class="skip-link sr-only sr-only-focusable" href="#content">Salir del contenido</a>
+    <nav class="navbar navbar-expand-md navbar-light bg-vc-dark">
+        <div class="container">
+            <a href="{% url 'home' %}" class="navbar-brand custom-logo-link" rel="home">
+                <img width="250" height="100" src="{% static 'images/cropped-viciochat.svg' %}" class="img-fluid" alt="VicioChat" decoding="async">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarNavDropdown" class="collapse navbar-collapse">
+                <ul id="main-menu" class="navbar-nav ml-auto">
+                    <li class="nav-item"><a title="España" href="chats/espana/index.html" class="nav-link"><i class="fas fa-folder-open"></i> España</a></li>
+                    <li class="nav-item"><a title="Latinos" href="chats/latinoamerica/index.html" class="nav-link"><i class="fas fa-folder-open"></i> Latinos</a></li>
+                    <li class="nav-item"><a title="Ocio" href="chats/ocio/index.html" class="nav-link"><i class="fas fa-folder-open"></i> Ocio</a></li>
+                    <li class="nav-item"><a title="Relaciones" href="chats/relaciones/index.html" class="nav-link"><i class="fas fa-folder-open"></i> Relaciones</a></li>
+                    <li class="nav-item"><a title="Horoscopo" href="horoscopo/index.html" class="nav-link"><i class="fas fa-balance-scale"></i> Horoscopo</a></li>
+                    <li class="nav-item"><a title="Blog" href="blog/index.html" class="nav-link"><i class="fas fa-newspaper"></i> Blog</a></li>
+                    <li class="nav-item"><a title="Ayuda" href="ayuda/index.html" class="nav-link"><i class="fas fa-question-circle"></i> Ayuda</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+{% endblock %}
