@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from .models import Profile
 from django.contrib.auth import login, authenticate
@@ -6,11 +6,12 @@ from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ValidationError
 from django.core.validators import validate_email
 from django.core.files.images import get_image_dimensions
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.contrib import messages
 import os
 from django.conf import settings
 from django.http import HttpResponse, Http404
+from django.contrib.auth.views import PasswordChangeView
 
 
 VALID_COUNTRIES = ['US', 'FR', 'DE', 'ES', 'IT', 'GB', 'CA', 'AU', 'NZ', 'IN', 'BR']  # Example list
@@ -138,9 +139,10 @@ def login_view(request):
         return render(request, 'authapp/login.html')
     
 @login_required
-def profile_view(request):
+def profile_view(request, username):
     # Assuming 'profile.html' is your template for displaying user profiles
-    return render(request, 'authapp/profile.html')
+    user = get_object_or_404(User, username=username)
+    return render(request, 'authapp/profile.html', {'user': user})
 
 def avatar_view(request, username):
     # Construct the full file path
@@ -152,3 +154,8 @@ def avatar_view(request, username):
             return HttpResponse(f.read(), content_type="image/png")
     else:
         raise Http404("Avatar not found")
+
+class CustomPasswordChangeView(PasswordChangeView):
+    def get_success_url(self):
+        # Redirect to the user's profile page
+        return reverse_lazy('profile', kwargs={'username': self.request.user.username})
