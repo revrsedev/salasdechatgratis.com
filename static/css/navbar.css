@@ -16,3 +16,14 @@
 }
 
 /* Additional custom styles */
+
+.show-password-toggle {
+    cursor: pointer;
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: underline;
+    user-select: none;
+}
+.show-password-toggle:hover {
+    color: #0056b3;
+}

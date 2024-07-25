@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}" type="text/css" media="all">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <script>
+        function previewAvatar(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('avatar-preview').src = e.target.result;
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</head>
+<body>
+    {% include 'main/navbar.html' %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-4">
+                <h3 class="text-center">Your Profile</h3>
+                <form method="post" action="{% url 'update_profile' %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="text-center mb-3">
+                        <img id="avatar-preview" 
+                            src="{% url 'avatar' user.username %}" 
+                            alt="Avatar" 
+                            class="img-thumbnail" 
+                            style="width: 150px; height: 150px;">
+                        <input type="file" class="form-control mt-3" name="avatar" onchange="previewAvatar(this);" accept="image/*">
+                    </div>
+                    <div class="mb-3">
+                        <label for="username" class="form-label"><b>Username</b></label>
+                        <input type="text" class="form-control" name="username" id="username" value="{{ user.username }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label"><b>Email</b></label>
+                        <input type="email" class="form-control" name="email" id="email" value="{{ user.email }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="country" class="form-label"><b>Country</b></label>
+                        <input type="text" class="form-control" name="country" id="country" value="{{ user.profile.country }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="city" class="form-label"><b>City</b></label>
+                        <input type="text" class="form-control" name="city" id="city" value="{{ user.profile.city }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="birthdate" class="form-label"><b>Birthdate</b></label>
+                        <input type="date" class="form-control" name="birthdate" id="birthdate" value="{{ user.profile.birthdate }}" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Update Profile</button>
+                </form>
+            </div>
+            <div class="col-lg-8 profile-info">
+                <h4 class="profile-heading">Profile Information</h4>
+                <hr class="my-4">
+                <div class="profile-details">
+                    <p><span class="label">Username:</span> {{ user.username }}</p>
+                    <p><span class="label">Email:</span> {{ user.email }}</p>
+                    <p><span class="label">Country:</span> {{ user.profile.country }}</p>
+                    <p><span class="label">City:</span> {{ user.profile.city }}</p>
+                    <p><span class="label">Birthdate:</span> {{ user.profile.birthdate }}</p>
+                </div>
+                <hr class="my-4">
+                <h4 class="profile-heading">Account Security</h4>
+                <p><a class="btn btn-outline-primary" href="{% url 'password_change' %}">Change Password</a></p>
+            </div>
+        </div>
+    </div>
+    {% include 'main/footer.html' %}
+</body>
+</html>
