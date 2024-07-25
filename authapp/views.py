@@ -133,7 +133,7 @@ def login_view(request):
         else:
             # Invalid login credentials
             messages.error(request, 'Invalid username or password.')
-            return render(request, 'c')
+            return render(request, 'authapp/login.html')
     else:
         return render(request, 'authapp/login.html')
     
