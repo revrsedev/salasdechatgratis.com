@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <title>VicioChat &#8211; Chat gratis en Español</title>
@@ -21,17 +21,25 @@
     <link rel="icon" href="{% static 'images/favicon-1-32x32.png' %}" sizes="32x32">
     <link rel="icon" href="{% static 'images/favicon-1-192x192.png' %}" sizes="192x192">
     <link rel="apple-touch-icon" href="{% static 'images/favicon-1-180x180.png' %}">
-    <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}" type="text/css" media="all">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}" type="text/css" media="all">
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}" type="text/css" media="all">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css" media="all">
+    
 </head>
 <body>
     <div class="site" id="page">
         {% include 'main/navbar.html' %}
-        {% block content %}
-        {% endblock %}
+        
+            {% block content %}
+            <!-- Page specific content will go here -->
+            {% endblock %}
+        
         {% include 'main/footer.html' %}
     </div>
     <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
 </body>
 </html>
+

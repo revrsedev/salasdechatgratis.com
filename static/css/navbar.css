@@ -1,0 +1,18 @@
+/* Custom styles for the form */
+.form-control::placeholder {
+    color: #888; /* Customize the placeholder color */
+    font-style: italic; /* Italic style */
+    opacity: 0.8; /* Transparency */
+}
+
+/* Navbar specific styles */
+.navbar-light .navbar-nav .nav-link {
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #FF7200;
+}
+
+/* Additional custom styles */
